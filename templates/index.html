@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to FastAPI + HTMX + Alpine.js</h1>
+<div>
+  <button hx-get="/datetime" hx-target="#time" hx-swap="outerHTML">
+    Load Current Time
+  </button>
+  <div id="time"></div>
+</div>
+
+  <div x-data="{ count: 0 }" style="margin-top: 1rem;">
+    <span x-text="count"></span>
+    <button @click="count++">Increment</button>
+  </div>
+
+  <p style="margin-top: 1rem;">
+    <a href="/search">Vulnerable user search</a>
+  </p>
+{% endblock %}
